@@ -62,6 +62,7 @@ const SelectableCard = ({ selected, onPress, children }) => {
         alignItems: 'center',
         paddingHorizontal: 38,
         width: L.window.width / 2 - 20,
+        height: L.window.width / 2 - 10,
         borderRadius: L.borderRadius,
       }}>
       {children}
