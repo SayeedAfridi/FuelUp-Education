@@ -1,40 +1,21 @@
 import React from 'react'
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  Text,
-  StatusBar,
-  View,
-} from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { GettingStarted } from './src/screens'
+import { StatusBar } from 'react-native'
 
+const Stack = createStackNavigator()
 const App = () => {
   return (
     <>
-      <StatusBar barStyle='dark-content' />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior='automatic'
-          style={styles.scrollView}>
-          <View style={styles.container}>
-            <Text>Welcome</Text>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <StatusBar barStyle='default' />
+      <NavigationContainer>
+        <Stack.Navigator headerMode='none'>
+          <Stack.Screen name='getting-started' component={GettingStarted} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   )
 }
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#fff',
-  },
-  container: {
-    backgroundColor: '#fff',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
 
 export default App
