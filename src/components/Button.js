@@ -5,6 +5,7 @@ import L from '../constants/layout'
 const Button = ({ style, text, secondary, onPress, block }) => {
   const styles = {
     paddingVertical: 14,
+    paddingHorizontal: 24,
     backgroundColor: secondary ? colors.secondary : colors.primary,
     width: block ? '100%' : 'auto',
     justifyContent: 'center',
