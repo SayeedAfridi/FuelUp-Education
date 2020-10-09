@@ -4,10 +4,12 @@ import BookLover from '../../assets/svg/book_lover.svg'
 import styles from './styles'
 import L from '../../constants/layout'
 import Button from '../../components/Button'
+import { useNavigation } from '@react-navigation/native'
 const {
   window: { width, height },
 } = L
 const GettingStarted = () => {
+  const nav = useNavigation()
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -17,7 +19,12 @@ const GettingStarted = () => {
           Get free education from anywhere when your smartphone is your school
         </Text>
         <Button text='Sign in' block style={styles.button} />
-        <Button secondary text='Create account' block />
+        <Button
+          onPress={() => nav.push('accountType')}
+          secondary
+          text='Create account'
+          block
+        />
       </View>
     </ScrollView>
   )
